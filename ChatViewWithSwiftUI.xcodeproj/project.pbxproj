@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		3B5661442AF818700012D200 /* ChatViewWithSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5661432AF818700012D200 /* ChatViewWithSwiftUIApp.swift */; };
-		3B5661462AF818700012D200 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5661452AF818700012D200 /* ContentView.swift */; };
 		3B5661482AF818710012D200 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B5661472AF818710012D200 /* Assets.xcassets */; };
 		3B56614B2AF818710012D200 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B56614A2AF818710012D200 /* Preview Assets.xcassets */; };
-		3B56614D2AF818710012D200 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B56614C2AF818710012D200 /* Persistence.swift */; };
-		3B5661502AF818710012D200 /* ChatViewWithSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B56614E2AF818710012D200 /* ChatViewWithSwiftUI.xcdatamodeld */; };
+		3B5661592AF8198F0012D200 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5661582AF8198F0012D200 /* ChatView.swift */; };
+		3B56615C2AF840AD0012D200 /* MessageRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B56615B2AF840AD0012D200 /* MessageRowItem.swift */; };
+		3B56615E2AF840D20012D200 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B56615D2AF840D20012D200 /* FooterView.swift */; };
+		3B5661602AF840EE0012D200 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B56615F2AF840EE0012D200 /* HeaderView.swift */; };
+		3B5661632AFA52D10012D200 /* Date-Extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5661622AFA52D10012D200 /* Date-Extens.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B5661402AF818700012D200 /* ChatViewWithSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatViewWithSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5661432AF818700012D200 /* ChatViewWithSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewWithSwiftUIApp.swift; sourceTree = "<group>"; };
-		3B5661452AF818700012D200 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B5661472AF818710012D200 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B56614A2AF818710012D200 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3B56614C2AF818710012D200 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		3B56614F2AF818710012D200 /* ChatViewWithSwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatViewWithSwiftUI.xcdatamodel; sourceTree = "<group>"; };
+		3B5661582AF8198F0012D200 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		3B56615B2AF840AD0012D200 /* MessageRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowItem.swift; sourceTree = "<group>"; };
+		3B56615D2AF840D20012D200 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		3B56615F2AF840EE0012D200 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3B5661622AFA52D10012D200 /* Date-Extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-Extens.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				3B5661432AF818700012D200 /* ChatViewWithSwiftUIApp.swift */,
-				3B5661452AF818700012D200 /* ContentView.swift */,
-				3B5661472AF818710012D200 /* Assets.xcassets */,
-				3B56614C2AF818710012D200 /* Persistence.swift */,
-				3B56614E2AF818710012D200 /* ChatViewWithSwiftUI.xcdatamodeld */,
+				3B5661562AF8195E0012D200 /* View */,
+				3B5661612AFA52770012D200 /* Extension */,
+				3B5661572AF819640012D200 /* Supporting */,
 				3B5661492AF818710012D200 /* Preview Content */,
 			);
 			path = ChatViewWithSwiftUI;
@@ -71,6 +74,41 @@
 				3B56614A2AF818710012D200 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3B5661562AF8195E0012D200 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B5661582AF8198F0012D200 /* ChatView.swift */,
+				3B56615A2AF840900012D200 /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B5661572AF819640012D200 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				3B5661472AF818710012D200 /* Assets.xcassets */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		3B56615A2AF840900012D200 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				3B56615B2AF840AD0012D200 /* MessageRowItem.swift */,
+				3B56615D2AF840D20012D200 /* FooterView.swift */,
+				3B56615F2AF840EE0012D200 /* HeaderView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		3B5661612AFA52770012D200 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3B5661622AFA52D10012D200 /* Date-Extens.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +181,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B5661502AF818710012D200 /* ChatViewWithSwiftUI.xcdatamodeld in Sources */,
-				3B56614D2AF818710012D200 /* Persistence.swift in Sources */,
-				3B5661462AF818700012D200 /* ContentView.swift in Sources */,
+				3B5661602AF840EE0012D200 /* HeaderView.swift in Sources */,
+				3B56615C2AF840AD0012D200 /* MessageRowItem.swift in Sources */,
+				3B5661632AFA52D10012D200 /* Date-Extens.swift in Sources */,
+				3B56615E2AF840D20012D200 /* FooterView.swift in Sources */,
+				3B5661592AF8198F0012D200 /* ChatView.swift in Sources */,
 				3B5661442AF818700012D200 /* ChatViewWithSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,19 +392,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3B56614E2AF818710012D200 /* ChatViewWithSwiftUI.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3B56614F2AF818710012D200 /* ChatViewWithSwiftUI.xcdatamodel */,
-			);
-			currentVersion = 3B56614F2AF818710012D200 /* ChatViewWithSwiftUI.xcdatamodel */;
-			path = ChatViewWithSwiftUI.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3B5661382AF818700012D200 /* Project object */;
 }
