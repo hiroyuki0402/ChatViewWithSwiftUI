@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MessageRowItem: View {
+
+    var chatData: ChatData
+
     var body: some View {
         /// メッセージ
         HStack(alignment: .top) {
@@ -42,7 +45,7 @@ extension MessageRowItem {
 
     /// メッセージエリア
     private var messageArea: some View {
-        Text("こんにちは")
+        Text(chatData.messages[0].text)
             .padding()
             .background(.white)
             .cornerRadius(30)
@@ -52,13 +55,13 @@ extension MessageRowItem {
         VStack(alignment: .trailing) {
             Spacer()
             Text("既読")
-            Text(Date().formattedDate(.HHmm))
+            Text(chatData.messages[0].toDate.formattedDate(.HHmm))
         }
         .font(.footnote)
     }
 }
 
 #Preview {
-    MessageRowItem()
+    MessageRowItem(chatData: ChatViewModel().getChatData(at: 0))
         .background(.gray)
 }

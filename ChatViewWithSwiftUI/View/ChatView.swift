@@ -10,6 +10,8 @@ import SwiftUI
 struct ChatView: View {
     // MARK: - プロパティー
 
+    @StateObject var chatViewModel = ChatViewModel()
+
     // MARK: - ボディー
 
     var body: some View {
@@ -18,8 +20,8 @@ struct ChatView: View {
             /// メッセージ
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
-                    ForEach(0 ..< 25) { item in
-                        MessageRowItem()
+                    ForEach(chatViewModel.chatDatas) { item in
+                        MessageRowItem(chatData: item)
                     }
                 }
                 .padding(.horizontal)
