@@ -25,9 +25,9 @@ extension Date {
             case .ddMMyyyy:
                 return "dd/MM/yyyy"
             case .MMddyyyy:
-                return  "MM/dd/yyyy"
+                return "MM/dd/yyyy"
             case .HHmmss:
-                return  "HH:mm:ss"
+                return "HH:mm:ss"
             case .hhmmssa:
                 return "hh:mm:ss a"
             case .HHmm:
