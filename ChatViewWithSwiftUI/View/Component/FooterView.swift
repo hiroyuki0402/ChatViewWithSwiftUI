@@ -9,6 +9,9 @@ import SwiftUI
 
 struct FooterView: View {
     @State var text: String = ""
+
+    @State var doneMesage: ((String) -> Void) = { _ in }
+
     var body: some View {
         /// タブバー(入力欄)
         HStack {
@@ -33,6 +36,10 @@ struct FooterView: View {
                         .padding(.horizontal, 15)
                     , alignment: .trailing
                 )
+                .onSubmit {
+                    doneMesage(text)
+                    text = ""
+                }
 
             Image(systemName: "mic")
                 .font(.title2)

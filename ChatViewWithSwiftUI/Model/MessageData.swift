@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MessageData: Decodable {
+struct MessageData: Decodable, Identifiable {
     var id: String
     let text: String
     let user: UserData

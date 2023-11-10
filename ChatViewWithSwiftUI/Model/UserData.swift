@@ -11,4 +11,8 @@ struct UserData: Decodable, Identifiable {
     let id: String
     let name: String
     let image: String
+
+    var isCurentUser: Bool {
+        return id == "1"
+    }
 }

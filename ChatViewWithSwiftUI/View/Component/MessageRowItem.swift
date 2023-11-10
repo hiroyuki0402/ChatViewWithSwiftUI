@@ -9,22 +9,33 @@ import SwiftUI
 
 struct MessageRowItem: View {
 
-    var chatData: ChatData
+    var messages: MessageData
 
     var body: some View {
         /// メッセージ
         HStack(alignment: .top) {
 
-            /// ユーザアイコン
-            userIcon
+            if messages.user.isCurentUser {
+                /// ユーザアイコン
+                userIcon
 
-            /// メッセージ
-            messageArea
+                /// メッセージ
+                messageArea
 
-            /// 時間
-            timeArea
-            Spacer()
+                /// 時間
+                timeArea
 
+                Spacer()
+            } else {
+                Spacer()
+
+                /// 時間
+                timeArea
+
+                /// メッセージ
+                messageArea
+
+            }
         }
         .padding(.bottom)
     }
@@ -45,23 +56,23 @@ extension MessageRowItem {
 
     /// メッセージエリア
     private var messageArea: some View {
-        Text(chatData.messages[0].text)
+        Text(messages.text)
             .padding()
-            .background(.white)
+            .background(messages.user.isCurentUser ? .white: .green)
             .cornerRadius(30)
     }
     /// 時間既読エリア
     private var timeArea: some View {
         VStack(alignment: .trailing) {
             Spacer()
-            Text("既読")
-            Text(chatData.messages[0].toDate.formattedDate(.HHmm))
+            Text(messages.user.isCurentUser ? "": "既読")
+            Text(messages.toDate.formattedDate(.HHmm))
         }
         .font(.footnote)
     }
 }
 
 #Preview {
-    MessageRowItem(chatData: ChatViewModel().getChatData(at: 0))
+    MessageRowItem(messages: ChatViewModel().getMessageData(at: 0))
         .background(.gray)
 }
