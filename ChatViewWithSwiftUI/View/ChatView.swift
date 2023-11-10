@@ -11,6 +11,13 @@ struct ChatView: View {
     // MARK: - プロパティー
 
     @StateObject var chatViewModel = ChatViewModel()
+    @State var index: String = ""
+
+    init() {
+        if let id = chatViewModel.messages.last?.id, let index = Int(id) {
+            self.index = String(index + 1)
+        }
+    }
 
     // MARK: - ボディー
 
@@ -20,8 +27,8 @@ struct ChatView: View {
             /// メッセージ
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
-                    ForEach(chatViewModel.chatDatas) { item in
-                        MessageRowItem(chatData: item)
+                    ForEach(chatViewModel.messages) { messageData in
+                        MessageRowItem(messages: messageData)
                     }
                 }
                 .padding(.horizontal)
@@ -33,10 +40,23 @@ struct ChatView: View {
             .overlay(HeaderView(), alignment: .top)
 
             /// フッター(入力欄)
-            FooterView()
+            FooterView { message in
+                addMesage(text: message)
+            }
 
         }//: VStack
     }//; ボディー
+
+
+    private func addMesage(text: String) {
+        let userData = UserData(id: "1", name: "カーキ", image: "user01")
+        let message = MessageData(
+            id: index,
+            text: text,
+            user: userData,
+            date: Date().formattedDate(.yyyyMMdd),
+            readed: false)
+    }
 }
 
 #Preview {
