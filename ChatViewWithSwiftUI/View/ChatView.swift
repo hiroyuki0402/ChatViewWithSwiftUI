@@ -11,13 +11,6 @@ struct ChatView: View {
     // MARK: - プロパティー
 
     @StateObject var chatViewModel = ChatViewModel()
-    @State var index: String = ""
-
-    init() {
-        if let id = chatViewModel.messages.last?.id, let index = Int(id) {
-            self.index = String(index + 1)
-        }
-    }
 
     // MARK: - ボディー
 
@@ -49,13 +42,17 @@ struct ChatView: View {
 
 
     private func addMesage(text: String) {
-        let userData = UserData(id: "1", name: "カーキ", image: "user01")
-        let message = MessageData(
-            id: index,
-            text: text,
-            user: userData,
-            date: Date().formattedDate(.yyyyMMdd),
-            readed: false)
+        if let id = chatViewModel.messages.last?.id, let index = Int(id) {
+            let index = String(index + 1)
+            let userData = UserData(id: "1", name: "カーキ", image: "user01")
+            let message = MessageData(
+                id: index,
+                text: text,
+                user: userData,
+                date: Date().formattedDate(.yyyyMMdd),
+                readed: false)
+            chatViewModel.saveMessageData(data: message)
+        }
     }
 }
 

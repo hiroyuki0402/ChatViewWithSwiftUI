@@ -22,6 +22,9 @@ struct MessageRowItem: View {
                 /// メッセージ
                 messageArea
 
+                /// 時間
+                timeArea
+
                 Spacer()
             } else {
                 Spacer()
@@ -62,7 +65,7 @@ extension MessageRowItem {
     private var timeArea: some View {
         VStack(alignment: .trailing) {
             Spacer()
-            Text("既読")
+            Text(messages.user.isCurentUser ? "": "既読")
             Text(messages.toDate.formattedDate(.HHmm))
         }
         .font(.footnote)

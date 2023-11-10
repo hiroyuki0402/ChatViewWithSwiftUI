@@ -38,6 +38,7 @@ struct FooterView: View {
                 )
                 .onSubmit {
                     doneMesage(text)
+                    text = ""
                 }
 
             Image(systemName: "mic")
